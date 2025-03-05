@@ -17,9 +17,11 @@ public class MailService {
     public String sendMail(String to, String subject, String body){
         try {
             SimpleMailMessage message = new SimpleMailMessage();
+            message.setFrom("shijas002@gmail.com");
             message.setTo(to);
             message.setSubject(subject);
             message.setText(body);
+            message.setReplyTo("shijasmusthafa619@gmail.com");
 
             javaMailSender.send(message);
             return "Send successfully";
