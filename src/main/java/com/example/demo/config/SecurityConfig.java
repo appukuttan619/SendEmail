@@ -18,7 +18,7 @@ public class SecurityConfig  {
                 .csrf(customizer -> customizer.disable())
                 .authorizeHttpRequests(request ->
                         request
-                                .requestMatchers("/sendMail")
+                                .requestMatchers("/sendMail","/genOtp","verifyOtp","/sendOtpMail")
                                 .permitAll()
                                 .anyRequest().authenticated()
 
